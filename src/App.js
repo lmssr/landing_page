@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { FaAlignRight } from 'react-icons/fa'
 import * as THREE from 'three'
 import { useSpring, a  } from "react-spring/three";
 import { Canvas, extend, useThree, useFrame } from "react-three-fiber";
