@@ -3,7 +3,7 @@ import { FaAlignRight } from 'react-icons/fa'
 import * as THREE from 'three'
 import { useSpring, a  } from "react-spring/three";
 import { Canvas, extend, useThree, useFrame } from "react-three-fiber";
-import { HTML, Text, Sky } from 'drei'
+import { HTML, Text, Sky, Sphere } from 'drei'
 
 import './App.css';
 
