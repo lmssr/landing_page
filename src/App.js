@@ -44,7 +44,7 @@ function App() {
           penumbra={1}
           castShadow
         />
-        <Box position={[0, 4, -2]}/>
+        <SpaceShip />
       </Canvas>
       </div>
     </div>
