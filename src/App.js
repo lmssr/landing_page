@@ -1,14 +1,15 @@
 import React, { useRef, useState } from 'react';
-import { FaAlignRight } from 'react-icons/fa'
 import * as THREE from 'three'
 import { useSpring, a  } from "react-spring/three";
 import { Canvas, extend, useThree, useFrame } from "react-three-fiber";
-import { HTML, Text, Sky, Sphere } from 'drei'
+import { OrbitControls } from "drei";
 
 import './App.css';
 
 import Navbar from './components/navbar/navbar'
 import Box from './components/box/box'
+import SpaceShip from './components/spaceship/spaceship'
+import Controls from './components/controls'
 
 
 function App() {
@@ -20,20 +21,30 @@ function App() {
         Welcome to our brand new website
       </h1>
       <div className="description">
-      <a>This is our cool description</a>
+      <p> This is our cool description</p>
       </div>
-      <Canvas camera={{ position: [0, 0, 5]}} onCreated={({ gl })=> {
+
+      <Canvas  camera={{ position: [0, 0, 0]}} onCreated={({ gl })=> {
         gl.shadowMap.enabled = true
         gl.shadowMap.type = THREE.PCFSoftShadowMap
       }}>
-        <Box position={[-4.2, 0, 0]} />
-        <Box position={[-2.2, 0, 0]} />
+        <Controls
+          autoRotate
+          enablePan={false}
+          enableZoom={false}
+          enableDamping
+          dampingFactor={0.5}
+          rotateSpeed={1}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
         <ambientLight intensity={0.5} />
         <spotLight
           position={[15, 20, 5]}
           penumbra={1}
           castShadow
         />
+        <Box position={[0, 4, -2]}/>
       </Canvas>
       </div>
     </div>

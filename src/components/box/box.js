@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { useSpring, a  } from "react-spring/three";
-import { Canvas, extend, useThree, useFrame } from "react-three-fiber";
+import { useFrame } from "react-three-fiber";
 
 
 function Box(props) {
