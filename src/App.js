@@ -16,7 +16,6 @@ function App() {
   return (
     <div className="App">
     <div className="container">
-      <Navbar />
       <h1>
         Welcome to our brand new website
       </h1>
@@ -28,14 +27,24 @@ function App() {
         gl.shadowMap.enabled = true
         gl.shadowMap.type = THREE.PCFSoftShadowMap
       }}>
-        <Controls />
+      <fog attach="fog" args={["white", 15, 25]}/>
+        <Controls
+          autoRotate
+          enablePan={false}
+          enableZoom={false}
+          enableDamping
+          dampingFactor={0.5}
+          rotateSpeed={1}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
+        <SpaceShip />
         <ambientLight intensity={0.5} />
         <spotLight
           position={[15, 20, 5]}
           penumbra={1}
           castShadow
         />
-        <SpaceShip />
       </Canvas>
       </div>
     </div>

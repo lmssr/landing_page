@@ -7,23 +7,17 @@ import { useSpring, a  } from "react-spring/three";
 
 extend({ OrbitControls })
 
-const Controls = () => {
-  const orbitRef = useRef()
-  const { camera, gl } = useThree()
-
-  useFrame(() => {
-    orbitRef.current.update()
-  })
-
+const Controls = props => {
+  const { gl, camera } = useThree()
+  const ref = useRef()
+  useFrame(() => ref.current.update())
   return (
     <orbitControls
-      autoRotate
-      maxPolarAngle={Math.PI / 3}
-      minPolarAngle={Math.PI / 3}
-      args={[camera, gl.domElement]}
-      ref={orbitRef}
+    autoRotate
+    ref={ref}
+    args={[camera, gl.domElement]} {...props}
     />
-    )
+  )
 }
 
 export default Controls

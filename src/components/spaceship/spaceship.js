@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 const SpaceShip = () => {
   const [model, setModel] = useState()
